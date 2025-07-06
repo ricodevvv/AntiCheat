@@ -1,0 +1,11 @@
+name: Katana
+version: 2.0-PRE
+main: club.imanity.katana.katana
+api-version: 1.13
+softdepend: [Viaversion, ProtocolLib, ProtocolSupport]
+load: POSTWORLD
+permissions:
+  katana.staff:
+    default: op
+  katana.bypass:
+    default: op

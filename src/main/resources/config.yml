@@ -1,0 +1,240 @@
+#    __ __ ___  _________    _   _____       ___    _   ____________________  ___________  ______
+#   / //_//   |/_  __/   |  / | / /   |     /   |  / | / /_  __/  _/ ____/ / / / ____/   |/_  __/
+#  / ,<  / /| | / / / /| | /  |/ / /| |    / /| | /  |/ / / /  / // /   / /_/ / __/ / /| | / /   
+# / /| |/ ___ |/ / / ___ |/ /|  / ___ |   / ___ |/ /|  / / / _/ // /___/ __  / /___/ ___ |/ /    
+# /_/ |_/_/  |_/_/ /_/  |_/_/ |_/_/  |_|  /_/  |_/_/ |_/ /_/ /___/\____/_/ /_/_____/_/  |_/_/ 
+#
+# Katana AntiCheat | Imanity Network    
+# This is now open sourced under AGPL-3.0 license.
+# Source Code is currently owned by @ ricodevvv, maaattn.
+#                               
+# Don't worry, with this anti-cheat gaming chairs and long arms won't be allowed :)
+#
+# Credits:
+# Karhu Anticheat - Messages, GUI, Alerts, Punishments, etc.
+# Intave Anticheat - AntiCrash
+# ImanityVPN - AntiVPN
+# PacketEvents - AntiCrash, Checks improvement and more (not really sure why giving credits but its necessary for the anti-cheat to work properly)                          
+#                                      
+license-key: 0V0-UND-KATANA-ROOT
+version-to-download: 2.2-beta # Do not change this otherwise it won't work
+Prefix: '&7[&b&l⚠&7] '
+MiscPrefix: '&7[&e⚠&7] '
+experimental-alert-symbol: '&aΔ'
+AlertsMessage: '&f%player% &7failed &b%check% &7[&cVL: &b%vl%&7]'
+ClientCheckMessage: '&f%player% &7joined using client &7[&e%brand%&7]'
+AntiCrashMessage: '&e%player% &fwas disconnected for &esuspicious activity &7(&e%debug%&7)'
+NetHandlerMessage: '&e%player% &fwas disconnected for &esuspicious network activity &7(&6%debug%&7)'
+VehicleHandlerMessage: '&f%player% &7sent an invalid vehicle packet'
+AlertsHoverableMessage: |-
+    &f%info%
+    &7Ping: &a%ping%ms &7| &7TPS: &a%tps% &7| &7Click to teleport
+AlertsHoverableMessageHighlightColor: '&b'
+GuiHighlightColor: '&l&b'
+AlertsClickCommand:
+    command: /tp %player%
+spigot-api-alert: true
+hoverless-alert: false
+alert-delay: 50
+Punishments:
+    broadcast: true
+    message: |-
+        &7&m
+        &c&l✗ &b&lKATANA ANTICHEAT
+        &fA player has been removed from the network for cheating
+        &7&m
+    banCommand:
+        - ban %player% 30d Cheating detected by Katana AntiCheat
+    kickCommand:
+        - kick %player% Cheating detected by Katana AntiCheat
+    command-delay-seconds: 0
+PunishCommand:
+    - ban %player% 30d Cheating detected by Katana AntiCheat
+server-name: Imanity-FullPvP
+autoban: false
+#     ____                            
+#    / __ )__  ______  ____ ____  ___ 
+#   / __  / / / / __ \/ __ `/ _ \/ _ \
+#  / /_/ / /_/ / / / / /_/ /  __/  __/
+# /_____/\__,_/_/ /_/\__, /\___/\___/ 
+#                  /____/            
+bungee:
+    execute-ban-command-in-bungee: false
+    alerts: false
+    alert-post-vl-rate: 10
+#     ___          __  _                      __  
+#    /   |  ____  / /_(_)_____________ ______/ /_ 
+#   / /| | / __ \/ __/ / ___/ ___/ __ `/ ___/ __ \
+#  / ___ |/ / / / /_/ / /__/ /  / /_/ (__  ) / / /
+# /_/  |_/_/ /_/\__/_/\___/_/   \__,_/____/_/ /_/ 
+#                                                    
+anticrash:
+    enabled: true
+    move-spam: true
+    place-spam: true
+    large-move: true
+    window-spam: true
+    payload-spam: true
+    slot-spam: true
+    arm-spam: true
+    kick-message: 'Connection timed out'
+#     ____                 __                                 __ 
+#    / __ \___ _   _____  / /___  ____  ____ ___  ___  ____  / /_
+#   / / / / _ \ | / / _ \/ / __ \/ __ \/ __ `__ \/ _ \/ __ \/ __/
+#  / /_/ /  __/ |/ /  __/ / /_/ / /_/ / / / / / /  __/ / / / /_  
+# /_____/\___/|___/\___/_/\____/ .___/_/ /_/ /_/\___/_/ /_/\__/  
+#                            /_/                                
+nethandler:
+    enabled: true
+    spoof: true
+    delay: true
+    kick-message: 'Connection timed out'
+    transaction-order:
+        '&c%player% &7sent transactions in wrong order &7(expected: &a%first%&7, sent: &c%sent%&7)'
+    cancel-keepalives-alert:
+        '&c%player% &7cancelled keepalive packets &7(&a%invalid%&7/&c%total%&7)'
+    cancel-transactions-alert:
+        '&c%player% &7cancelled transaction packets &7(&a%invalid%&7/&c%total%&7)'
+    own-keepalives-alert:
+        '&c%player% &7sent unauthorized keepalives &7(&a%invalid%&7/&c%total%&7)'
+    own-transactions-alert:
+        '&c%player% &7sent unauthorized transactions &7(&a%invalid%&7/&c%total%&7)'
+    cancel-and-own-kick-message:
+        'Connection timed out'
+    wrong-order-kick-message: 'Connection timed out (expected: %first%, received: %received%)'
+vehicle-handler:
+    unmount: false
+unallowed-brands:
+    brands: |-
+        Vivecraft
+        Crystalware
+    kick-msg: '&cThis client is not allowed on our server!'
+pullback:
+    enabled: true
+    type: generic
+client-check: true
+bypass-permission: false
+# If you want to change the /katana command, you can change the name here
+# For example: anticheat-name: AntiKids will change to /antikids but won't change the permissions
+anticheat-name: Katana
+# 
+#     ___          __  _     _    __          
+#    /   |  ____  / /_(_)   | |  / /___  ____ 
+#   / /| | / __ \/ __/ /____| | / / __ \/ __ \
+#  / ___ |/ / / / /_/ /_____/ |/ / /_/ / / / /
+# /_/  |_/_/ /_/\__/_/      |___/ .___/_/ /_/ 
+#                             /_/            
+anti-vpn:
+    enabled: true
+    proxy-check: true
+    malicious-check: true
+    bypass:
+        - UUID1
+        - UUID2
+    kick-message: |-
+        &b&lIMANITY NETWORK
+        
+        &cVPNs and proxies are not allowed on this server.
+        &7Please disable your VPN to connect.
+# 
+#     ____  _                          __
+#    / __ \(_)_____________  _________/ /
+#   / / / / / ___/ ___/ __ \/ ___/ __  / 
+#  / /_/ / (__  ) /__/ /_/ / /  / /_/ /  
+# /_____/_/____/\___/\____/_/   \__,_/   
+#                                       
+discord:
+    enabled: false
+    alert-webhook-url: INSERT_HERE
+    crash-webhook-url: INSERT_HERE
+    show-world: true
+    show-statistics: true
+    show-icon-thumbnail: true
+    post-vl-rate: 10
+    send-alerts: true
+    send-bans: true
+high-ping-kick:
+    enabled: false
+    max-ping: 1000
+    ping-over-max-ticks-before-kick: 250
+    kick-message: '&cYour ping is too high. Please try again later.'
+packetevents:
+    injectAsync: true
+    ejectAsync: true
+    injectEarly: true
+    kickUninjected: true
+    uninjected-kick-message: "&cFailed to load your data. Please reconnect!"
+commands:
+    alerts:
+        enabled: '&b&lKATANA &7| &aAlerts enabled!'
+        disabled: '&b&lKATANA &7| &cAlerts disabled!'
+    help: |-
+        &3&l> &b&lKATANA &3&l<
+
+        &b* &7/katana alerts &8- &fToggle alerts on/off
+        &b* &7/katana gui &8- &fOpen management interface
+        &b* &7/katana logs &8- &fView violation logs
+        &b* &7/katana recentbans &8- &fView recent bans
+        &b* &7/katana manualban &8- &fBan a player manually
+        &b* &7/katana info <player> &8- &fView player information
+        &b* &7/katana reload &8- &fReload configuration
+    banwave: |-
+        &3&l> &b&lKATANA &3&l<
+
+        &b* &7/katana banwave gui &8- &fOpen ban wave management
+        &b* &7/katana banwave list &8- &fView pending ban wave players
+    logs:
+        ban-color: '&c'
+        highlight-color: '&b'
+    no-permission: "&cYou don't have permission to use this command!"
+default-version: '1_8'
+# 
+#     ____  ___  _________    ____  ___   _____ ______
+#    / __ \/   |/_  __/   |  / __ )/   | / ___// ____/
+#   / / / / /| | / / / /| | / __  / /| | \__ \/ __/   
+#  / /_/ / ___ |/ / / ___ |/ /_/ / ___ |___/ / /___   
+# /_____/_/  |_/_/ /_/  |_/_____/_/  |_/____/_____/   
+#                                                     
+database: FlatFile # MONGO, MYSQL can also be used.
+mysql:
+    user: KATANA
+    address: localhost
+    password: password
+    database: KATANA
+    port: 3306
+mongo:
+    host: 127.0.0.1
+    port: 27017
+    database: KATANA
+    authentication:
+        enabled: false
+        username: KATANA
+        password: password
+noautoban-alert-symbol: '&c≠'
+reset-violations-on-leave: true
+disallow-flags-after-punishment: true
+cracked-server: false
+geyser:
+    stop-injecting-bedrock-players: true
+ghostblock-support:
+    enabled: true
+    lagback-on-walk: true
+    update-on-walk: true
+    liquid-dector: true
+server-lag-protection:
+    max-tick-length: 110
+    warning-message:
+        "%prefix% &c%player% &fwould have been flagged, but server lagged within
+        &c1 second&f."
+    warning-display-type: CONSOLE
+async-kb-fix: false
+join-exempt-ticks: 100
+banwaves:
+    punish: configurethis %player%
+    messages:
+        caught: '&b%player% &3has been caught in the &bBan Wave!'
+        complete:
+            '&bKATANA &3has completed the ban wave. A total of &b%bans% players &3were
+            banned.'
+    broadcast-caught: true
+    broadcast-complete: true
