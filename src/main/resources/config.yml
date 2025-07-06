@@ -16,11 +16,9 @@
 # ImanityVPN - AntiVPN
 # PacketEvents - AntiCrash, Checks improvement and more (not really sure why giving credits but its necessary for the anti-cheat to work properly)                          
 #                                      
-license-key: 0V0-UND-KATANA-ROOT
-version-to-download: 2.2-beta # Do not change this otherwise it won't work
 Prefix: '&7[&b&l⚠&7] '
 MiscPrefix: '&7[&e⚠&7] '
-experimental-alert-symbol: '&aΔ'
+experimental-alert-symbol: '&C!'
 AlertsMessage: '&f%player% &7failed &b%check% &7[&cVL: &b%vl%&7]'
 ClientCheckMessage: '&f%player% &7joined using client &7[&e%brand%&7]'
 AntiCrashMessage: '&e%player% &fwas disconnected for &esuspicious activity &7(&e%debug%&7)'
@@ -115,7 +113,8 @@ pullback:
 client-check: true
 bypass-permission: false
 # If you want to change the /katana command, you can change the name here
-# For example: anticheat-name: AntiKids will change to /antikids but won't change the permissions
+# For example: anticheat-name: AntiKids will change to /antikids but won't change the permissions}
+#                ▼▼▼
 anticheat-name: Katana
 # 
 #     ___          __  _     _    __          
@@ -136,6 +135,9 @@ anti-vpn:
         
         &cVPNs and proxies are not allowed on this server.
         &7Please disable your VPN to connect.
+
+        &fNot true? Open a ticket!
+        &bdiscord.imanity.lol
 # 
 #     ____  _                          __
 #    / __ \(_)_____________  _________/ /
