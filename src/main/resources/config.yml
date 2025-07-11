@@ -7,6 +7,7 @@
 # Katana AntiCheat | Imanity Network    
 # This is now open sourced under AGPL-3.0 license.
 # Source Code is currently owned by @ ricodevvv, maaattn.
+# Full recoded katana will be sold on BuiltByBit.
 #                               
 # Don't worry, with this anti-cheat gaming chairs and long arms won't be allowed :)
 #
@@ -136,8 +137,8 @@ anti-vpn:
         &cVPNs and proxies are not allowed on this server.
         &7Please disable your VPN to connect.
 
-        &fNot true? Open a ticket!
-        &bdiscord.imanity.lol
+        &fNot accurrate? Open a ticket!
+        &bdiscord.imanity.club
 # 
 #     ____  _                          __
 #    / __ \(_)_____________  _________/ /
@@ -171,7 +172,7 @@ commands:
         enabled: '&b&lKATANA &7| &aAlerts enabled!'
         disabled: '&b&lKATANA &7| &cAlerts disabled!'
     help: |-
-        &3&l> &b&lKATANA &3&l<
+        &3&l> &b&lKATANA
 
         &b* &7/katana alerts &8- &fToggle alerts on/off
         &b* &7/katana gui &8- &fOpen management interface
@@ -181,7 +182,7 @@ commands:
         &b* &7/katana info <player> &8- &fView player information
         &b* &7/katana reload &8- &fReload configuration
     banwave: |-
-        &3&l> &b&lKATANA &3&l<
+        &3&l> &b&lKATANA
 
         &b* &7/katana banwave gui &8- &fOpen ban wave management
         &b* &7/katana banwave list &8- &fView pending ban wave players
